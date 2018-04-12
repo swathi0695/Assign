@@ -1,0 +1,43 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+df = pd.read_excel('C:\\Users\\user\\.spyder-py3\\bmi.xlsx')
+print(df.columns.values)
+x=df.iloc[:,:].values
+print(x)
+print(df['height'])
+print("\t\t***************")
+print("Height of students in order :")
+h=[]
+h=df['height']
+w=df['weight']
+print(type(h))
+print(df.sort_values(by=['height']))
+
+print("calculationg and printing BMI :")
+for i in range(1,5):
+    bmi=w[i]/(h[i]**2)
+#    bmi=float(np.array(w[i])/np.array((h[i]**2)))
+print(bmi)
+
+
+df['education']=np.where(df['education'] =='basic.9y', 'Basic', df['education'])
+for i in range(1,6):
+    if df.loc[df['bmi'] >= 1:
+        print(df.loc[df['name'].where df.loc[df['bmi']]>=1, 'name', df['bmi'])
+#inserting the bmi 
+idx=7
+print(df.insert(loc=idx,column='bmi',value=h))
+
+print(df.groupby(['bmi']))
+
+print("Weight classification :")
+for in range(1,5):
+    if bmi[i] < 18.5:
+       print("underweight : %s" %(df['name'].values[i]))
+    elif bmi[i] >=18.5 :
+        print("Healthy : %s " %(df['name'].values[i])))
+    else:
+        print(" obese : ")
+        print(df['name'].values[i])
